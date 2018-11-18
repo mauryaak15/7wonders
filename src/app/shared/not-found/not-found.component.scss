@@ -1,0 +1,21 @@
+.not-found-wrapper {
+    margin: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    line-height: 1.4;
+    .hero {
+        font-size: 3em;
+        color: #ff8501;
+    }
+    .title {
+        font-size: 1.5em;
+        letter-spacing: 1.5px;
+        color: #ff7300;
+    }
+    .small {
+        color: red;
+    }
+}

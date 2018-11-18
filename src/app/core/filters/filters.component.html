@@ -1,0 +1,26 @@
+<div class="filters-wrapper">
+  <div class="search-wrapper">
+    <input type="search" class="search" (input)="onSearch($event.target.value)" placeholder="Search by Name">
+  </div>
+  <div class="statistics">
+    <p class="total-likes">
+      <span class="text">Total Likes: </span>
+      <span class="likes">{{ wondersService.totalLikes }}</span>
+    </p>
+    <p class="api-hits">
+      <span class="text">API Hits: </span>
+      <span class="hits">{{ wondersService.totalApiHits }}</span>
+    </p>
+  </div>
+  <div class="sort-wrapper">
+    <select name="sortby" class="sortby" [(ngModel)]="order">
+      <option [value]="option.value" *ngFor="let option of sortOptions">{{ option.name }}</option>
+    </select>
+    <div class="custom-select-sortby" (click)="toggleDropDown()">
+      {{ ( order | titlecase ) || 'Select' }}
+    </div>
+    <div class="select-options" [ngClass]="{'hide': !dropDownstate}">
+      <div class="option" [ngClass]="{'active': order === option.value}" *ngFor="let option of sortOptions" (click)="chooseOption(option.value)">{{ option.name }}</div>
+    </div>
+  </div>
+</div>

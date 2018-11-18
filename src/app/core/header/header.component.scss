@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    max-height: 55px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    .logo-wrapper {
+        flex: 1;
+        max-width: 152px;
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .menu-icon-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        max-width: 35px;
+        .nav-icon {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

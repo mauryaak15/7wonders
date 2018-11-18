@@ -1,0 +1,48 @@
+<div class="content">
+  <div class="cards-wrapper" *ngIf="wondersService.wonders.length; else notFound">
+    <div class="card" *ngFor="let wonder of wondersService.wonders">
+      <div class="card-body">
+        <img [src]="wonder.imageURL" [alt]="wonder.place" class="card-image">
+        <div class="card-footer">
+          <div class="rating">
+            <p class="text">Ratings: </p>
+            <div class="stars-wrapper">
+                <div class="star-top" [ngStyle]="{width: getRating(wonder.ratings)}">
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                </div>
+                <div class="star-bottom">
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                  <span>☆</span>
+                </div>
+            </div>
+          </div>
+          <p class="title-wrapper">{{ wonder.place }}</p>
+        </div>
+        <div class="overlay">
+          <div class="like-wrapper">
+            <div class="like-icon-wrapper" (click)="updateLike(wonder)">
+              <i class="fa fa-heart like-icon" [ngClass]="{'active': wonder.flag}"></i>
+            </div>
+            <p class="likes">{{ wonder.likes }}</p>
+          </div>
+          <div class="overlay-content">
+            <h3 class="title">{{ wonder.place }}</h3>
+            <p class="desc">
+              {{ wonder.description || 'We are working for this place. It will be updated soon, stay tuned!' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #notFound>
+      <app-not-found *ngIf="!wondersService.loading"></app-not-found>
+  </ng-template>
+</div>
