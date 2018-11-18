@@ -127,8 +127,11 @@
                             margin-top: 10px;
                             /* letter-spacing: 1px; */
                             word-spacing: 1px;
-                            line-height: 18px;
+                            line-height: 1.3em;
                             text-align: center;
+                            @media (max-width: 768px) {
+                                font-size: .6em;
+                            }
                         }
                     }
                 }

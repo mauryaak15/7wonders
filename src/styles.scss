@@ -54,4 +54,7 @@ table {
 
 body {
 	font-family: "Segoe UI",Arial,sans-serif;
+	@media (max-width: 768px) {
+		font-size: 12px;
+	}
 }
