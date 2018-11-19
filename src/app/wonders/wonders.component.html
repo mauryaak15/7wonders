@@ -2,7 +2,8 @@
   <div class="cards-wrapper" *ngIf="wondersService.wonders.length; else notFound">
     <div class="card" *ngFor="let wonder of wondersService.wonders">
       <div class="card-body">
-        <img [src]="wonder.imageURL" [alt]="wonder.place" class="card-image">
+        <img [src]="wonder.imageURL" (load)="wonder.imageLoaded = true" [alt]="wonder.place" class="card-image" [hidden]="!wonder.imageLoaded">
+        <img src="assets/images/placeholder.png" class="card-image" alt="placeholder" [hidden]="wonder.imageLoaded">
         <div class="card-footer">
           <div class="rating">
             <p class="text">Ratings: </p>

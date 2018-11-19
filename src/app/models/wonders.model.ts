@@ -6,4 +6,5 @@ export class Wonders {
     ratings: string;
     likes: number;
     flag = false;
+    imageLoaded = false;
   }
