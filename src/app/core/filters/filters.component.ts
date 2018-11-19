@@ -32,7 +32,9 @@ export class FiltersComponent implements OnInit {
 
   onSearch(query) {
     this.wondersService.onSearch.emit(query);
-    this.wondersService.sortWonders(this.order);
+    if (this.order) {
+      this.wondersService.sortWonders(this.order);
+    }
   }
 
   toggleDropDown() {
